@@ -1,0 +1,249 @@
+sitemap villa label="Benvenuto a CASA"
+{
+  //  Frame label="Gestione riscaldamento"{
+        Frame label="Stato zone" {
+            Default item=AllarmeGenerale
+            Selection item=StatoFZ1 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Selection item=StatoFZ2 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+            Selection item=StatoFZ3 mappings=[0="OFF", 1="COMFORT", 2="ECONOMY", 3="AUTO"]
+        }
+
+        Frame label="Stato Ambienti" icon="party"{
+            Text item=Riepilogo1 label="Biliardo Z1 [%s]" icon=settings labelcolor=[StatoRele1==0="red", StatoRele1==1="green"] {
+                Default item=Termoumidostato1T
+                Default item=Termoumidostato1U
+                Setpoint item=Termoumidostato1S minValue=10 maxValue=30 step=1 //Set temperatura
+                //Slider item=Termoumidostato1S sendFrequency=4000
+                Switch item=ProxyAttTermo1 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo1==3]
+                Switch item=ProxyAttTermo1 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo1==4]
+                Text item=ProxyTempAttTermo1  visibility=[ProxyWatingAttTermo1==0]
+                Default item=FeedBRele1 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele1 valuecolor=[1="green",0="red"] labelcolor=[1="green", 0="red"] //Rele termostato SPENTO / ACCESO 
+            }
+            Text item=Riepilogo2 label="AntiBagno P.I. Z1 [%s]" icon=settings labelcolor=[StatoRele2==0="red", StatoRele2==1="green"] {
+                Default item=Termoumidostato2T
+                Default item=Termoumidostato2U
+                Setpoint item=Termoumidostato2S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo2 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo2==3]
+                Switch item=ProxyAttTermo2 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo2==4]
+                Text item=ProxyTempAttTermo2  visibility=[ProxyWatingAttTermo2==0]
+                Default item=FeedBRele2 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele2 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo3 label="App.aranc. Z2 [%s]" icon=settings labelcolor=[StatoRele3==0="red", StatoRele3==1="green"] {
+                Default item=Termoumidostato3T
+                Default item=Termoumidostato3U
+                Setpoint item=Termoumidostato3S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo3 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo3==3]
+                Switch item=ProxyAttTermo3 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo3==4]
+                Text item=ProxyTempAttTermo3  visibility=[ProxyWatingAttTermo3==0]
+                Default item=FeedBRele3 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele3 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo4 label="TV Z2 [%s]" icon=settings labelcolor=[StatoRele4==0="red", StatoRele4==1="green"] {
+                Default item=Termoumidostato4T
+                Default item=Termoumidostato4U
+                Setpoint item=Termoumidostato4S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo4 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo4==3]
+                Switch item=ProxyAttTermo4 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo4==4]
+                Text item=ProxyTempAttTermo4  visibility=[ProxyWatingAttTermo4==0]
+                Default item=FeedBRele4 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele4 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo5 label="AntiBagno PT Z2 [%s]" icon=settings labelcolor=[StatoRele5==0="red", StatoRele5==1="green"] {
+                Default item=Termoumidostato5T
+                Default item=Termoumidostato5U
+                Setpoint item=Termoumidostato5S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo5 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo5==3]
+                Switch item=ProxyAttTermo5 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo5==4]
+                Text item=ProxyTempAttTermo5  visibility=[ProxyWatingAttTermo5==0]
+                Default item=FeedBRele5 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele5 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo6 label="Salone Z2 [%s]" icon=settings labelcolor=[StatoRele6==0="red", StatoRele6==1="green"] {
+                Default item=Termoumidostato6T
+                Default item=Termoumidostato6U
+                Setpoint item=Termoumidostato6S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo6 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo6==3]
+                Switch item=ProxyAttTermo6 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo6==4]
+                Text item=ProxyTempAttTermo6  visibility=[ProxyWatingAttTermo6==0]
+                Default item=FeedBRele6 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele6 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo7 label="Cucina Z2 [%s]" icon=settings labelcolor=[StatoRele7==0="red", StatoRele7==1="green"] {
+                Default item=Termoumidostato7T
+                Default item=Termoumidostato7U
+                Setpoint item=Termoumidostato7S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo7 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo7==3]
+                Switch item=ProxyAttTermo7 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo7==4]
+                Text item=ProxyTempAttTermo7  visibility=[ProxyWatingAttTermo7==0]
+                Default item=FeedBRele7 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele7 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo8 label="App.rosso Z3 [%s]" icon=settings labelcolor=[StatoRele8==0="red", StatoRele8==1="green"] {
+                Default item=Termoumidostato8T
+                Default item=Termoumidostato8U
+                Setpoint item=Termoumidostato8S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo8 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo8==3]
+                Switch item=ProxyAttTermo8 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo8==4]
+                Text item=ProxyTempAttTermo8  visibility=[ProxyWatingAttTermo8==0]
+                Default item=FeedBRele8 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele8 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo9 label="App.verde Z3 [%s]" icon=settings labelcolor=[StatoRele9==0="red", StatoRele9==1="green"] {
+                Default item=Termoumidostato9T
+                Default item=Termoumidostato9U
+                Setpoint item=Termoumidostato9S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo9 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo9==3]
+                Switch item=ProxyAttTermo9 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo9==4]
+                Text item=ProxyTempAttTermo9  visibility=[ProxyWatingAttTermo9==0]
+                Default item=FeedBRele9 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele9 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo10 label="Corridoio Z3 [%s]" icon=settings labelcolor=[StatoRele10==0="red", StatoRele10==1="green"] {
+                Default item=Termoumidostato10T
+                Default item=Termoumidostato10U
+                Setpoint item=Termoumidostato10S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo10 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo10==3]
+                Switch item=ProxyAttTermo10 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo10==4]
+                Text item=ProxyTempAttTermo10  visibility=[ProxyWatingAttTermo10==0]
+                Default item=FeedBRele10 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele10 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo11 label="Arianna Z3 [%s]" icon=settings labelcolor=[StatoRele11==0="red", StatoRele11==1="green"] {
+                Default item=Termoumidostato11T
+                Default item=Termoumidostato11U
+                Setpoint item=Termoumidostato11S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo11 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo11==3]
+                Switch item=ProxyAttTermo11 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo11==4]
+                Text item=ProxyTempAttTermo11  visibility=[ProxyWatingAttTermo11==0]
+                Default item=FeedBRele11 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele11 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo12 label="Giolo Z3 [%s]" icon=settings labelcolor=[StatoRele12==0="red", StatoRele12==1="green"] {
+                Default item=Termoumidostato12T
+                Default item=Termoumidostato12U
+                Setpoint item=Termoumidostato12S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo12 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo12==3]
+                Switch item=ProxyAttTermo12 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo12==4]
+                Text item=ProxyTempAttTermo12  visibility=[ProxyWatingAttTermo12==0]
+                Default item=FeedBRele12 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele12 //Rele termostato SPENTO / ACCESO
+            }
+            Text item=Riepilogo13 label="Eleonora Z3 [%s]" icon=settings labelcolor=[StatoRele13==0="red", StatoRele13==1="green"] {
+                Default item=Termoumidostato13T
+                Default item=Termoumidostato13U
+                Setpoint item=Termoumidostato13S minValue=10 maxValue=30 step=1 //Set temperatura
+                Switch item=ProxyAttTermo13 mappings=[ON="Attiva"] visibility=[ProxyWatingAttTermo13==3]
+                Switch item=ProxyAttTermo13 mappings=[ON="Disattiva"]  visibility=[ProxyWatingAttTermo13==4]
+                Text item=ProxyTempAttTermo13  visibility=[ProxyWatingAttTermo13==0]
+                Default item=FeedBRele13 //Stato Termostato ATTIVATO /DISATTIVATO
+                Default item=StatoRele13 //Rele termostato SPENTO / ACCESO
+            }
+
+        }
+   
+    //}
+    Frame label="SetPoint Acqua Sanitario" {
+        Setpoint item=Set_temp_standard_condition_ACS minValue=10 maxValue=90 step=1
+        Default item=TempContrACS
+    }
+
+    Frame label="Stato Pompe" {
+		Group item=gPompe label="Stato pompe" icon=pump 
+	}
+    // Frame label="TVCC" {
+    //     Text label="CAM1" icon="camera" {
+    //         //Image item=Cam1_snap
+    //         //Default item=Cam1_rtsp
+    //       Image url="http://google.com/leaveLinkAsThis" item=Cam1_imageD
+               
+            
+    //     }
+    // }
+    // Frame label="Opensprinkler" {
+    //     Text label="Stazioni" icon="lawnmower" {
+    //         Switch item=Station01 mappings=[ON="START"] visibility=[Station01 == OFF]
+	// 		Switch item=Station01 mappings=[OFF="STOP"] visibility=[Station01 == ON]
+	// 		Selection item=Station01NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station01 == OFF]
+	// 		Default item=Station01RemainingTime visibility=[Station01 == ON]
+
+	// 		Switch item=Station02 mappings=[ON="START"] visibility=[Station02 == OFF]
+	// 		Switch item=Station02 mappings=[OFF="STOP"] visibility=[Station02 == ON]
+	// 		Selection item=Station02NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station02 == OFF]
+	// 		Default item=Station02RemainingTime visibility=[Station02 == ON]
+
+	// 		Switch item=Station03 mappings=[ON="START"] visibility=[Station03 == OFF]
+	// 		Switch item=Station03 mappings=[OFF="STOP"] visibility=[Station03 == ON]
+	// 		Selection item=Station03NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station03 == OFF]
+	// 		Default item=Station03RemainingTime visibility=[Station03 == ON]
+
+	// 		Switch item=Station04 mappings=[ON="START"] visibility=[Station04 == OFF]
+	// 		Switch item=Station04 mappings=[OFF="STOP"] visibility=[Station04 == ON]
+	// 		Selection item=Station04NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station04 == OFF]
+	// 		Default item=Station04RemainingTime visibility=[Station04 == ON]
+
+	// 		Switch item=Station05 mappings=[ON="START"] visibility=[Station05 == OFF]
+	// 		Switch item=Station05 mappings=[OFF="STOP"] visibility=[Station05 == ON]
+	// 		Selection item=Station05NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station05 == OFF]
+	// 		Default item=Station05RemainingTime visibility=[Station05 == ON]
+
+	// 		Switch item=Station06 mappings=[ON="START"] visibility=[Station06 == OFF]
+	// 		Switch item=Station06 mappings=[OFF="STOP"] visibility=[Station06 == ON]
+	// 		Selection item=Station06NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station06 == OFF]
+	// 		Default item=Station06RemainingTime visibility=[Station06 == ON]
+
+	// 		Switch item=Station07 mappings=[ON="START"] visibility=[Station07 == OFF]
+	// 		Switch item=Station07 mappings=[OFF="STOP"] visibility=[Station07 == ON]
+	// 		Selection item=Station07NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station07 == OFF]
+	// 		Default item=Station07RemainingTime visibility=[Station07 == ON]
+
+	// 		Switch item=Station08 mappings=[ON="START"] visibility=[Station08 == OFF]
+	// 		Switch item=Station08 mappings=[OFF="STOP"] visibility=[Station08 == ON]
+	// 		Selection item=Station08NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station08 == OFF]
+	// 		Default item=Station08RemainingTime visibility=[Station08 == ON]
+
+    //         Switch item=Station09 mappings=[ON="START"] visibility=[Station09 == OFF]
+	// 		Switch item=Station09 mappings=[OFF="STOP"] visibility=[Station09 == ON]
+	// 		Selection item=Station09NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station09 == OFF]
+	// 		Default item=Station09RemainingTime visibility=[Station09 == ON]
+
+    //         Switch item=Station10 mappings=[ON="START"] visibility=[Station10 == OFF]
+	// 		Switch item=Station10 mappings=[OFF="STOP"] visibility=[Station10 == ON]
+	// 		Selection item=Station10NextDuration mappings=[60="1 min", 300="5 min", 600="10 min"] visibility=[Station10 == OFF]
+	// 		Default item=Station10RemainingTime visibility=[Station10 == ON]
+    //     }
+    // }
+    Frame label="Sistema" {
+        Text label="Disponibilità device" icon=settings {
+            Text item=opensprinkler  valuecolor=[ON="green",OFF="red"] 
+            Text item=plcriscaldamento  valuecolor=[ON="green",OFF="red"]
+            Text item=dahuatvcc  valuecolor=[ON="green",OFF="red"]
+            Text item=plcpompadicalore  valuecolor=[ON="green",OFF="red"]
+            Text item=eap110outdoorwifi  valuecolor=[ON="green",OFF="red"]
+        }
+Text item=Speedtest_Server icon="speedtest"
+			{
+				Frame label="Risultati"
+				{
+					Text item=Speedtest_Download_Bandwith
+					Text item=Speedtest_Upload_Bandwith
+					Text item=Speedtest_Ping_Jitter
+					Text item=Speedtest_Ping_Latency
+				}
+				Frame label="Controllo"
+				{
+					Text item=Speedtest_Interface_ExternalIP
+				//	Text item=SpeedtestRunning label="Speedtest [%s]" visibility=[SpeedtestRunning != "-"]
+				//	Text item=SpeedtestResultError visibility=[SpeedtestRunning == "Errore"]
+				//	Switch item=SpeedtestRerun mappings=[ON="Start"] visibility=[SpeedtestRunning == "Misurazione terminata."	]
+				}
+				Frame label="Statistiche"
+				{
+					Text item=Speedtest_ResultURL
+					Image label="Letzte Messung" item=Speedtest_ResultURL
+                    Webview url="/static/chart.html" height=12 icon="speedtest_summary"
+				}
+			}
+    }	
+}

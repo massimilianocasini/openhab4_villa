@@ -1,0 +1,1 @@
+Thing mail:smtp:gmail_service [ hostname="smtp.gmail.com", sender="service@alberocasa.org", security="STARTTLS", port="587", username="service@alberocasa.org", password="multicentrum" ]
