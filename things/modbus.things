@@ -49,7 +49,7 @@ Bridge modbus:tcp:localhostTCP [ host="192.168.1.160", port=502, id=1 ] {
         Thing data ReleTht5 [ readStart="105", readValueType="bit"]
         Thing data FReleTht5 [ readStart="106", readValueType="bit"]
         Thing data OnTht5 [ readStart="107", readValueType="bit", writeStart="107", writeValueType="bit", writeType="coil"]
-        Thing data OffTht5 [ readStart="108", readValueType="bit", writeStart="125", writeValueType="bit", writeType="coil"]
+        Thing data OffTht5 [ readStart="108", readValueType="bit", writeStart="108", writeValueType="bit", writeType="coil"]
 
         Thing data TestTht6 [ readStart="109", readValueType="bit"]
         Thing data AllTht6 [ readStart="110", readValueType="bit"]
