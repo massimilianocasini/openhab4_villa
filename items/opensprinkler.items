@@ -1,6 +1,6 @@
 Group gStations
 
-Switch Station01 "Porta Cucina Salone x 6" <switch> (gStations) { channel="opensprinkler:station:http:01:stationState" }
+/* Switch Station01 "Porta Cucina Salone x 6" <switch> (gStations) { channel="opensprinkler:station:http:01:stationState" }
 Number:Time Station01RemainingTime "Stazione01 tempo rimasto" <time> { channel="opensprinkler:station:http:01:remainingWaterTime" }
 Number:Time Station01NextDuration "Stazione01 set tempo" <time> { channel="opensprinkler:station:http:01:nextDuration" }
 
@@ -38,4 +38,4 @@ Number:Time Station09NextDuration "Stazione09 set tempo" <time> { channel="opens
 
 Switch Station10 "Doccia piscina x 7" <switch> (gStations) { channel="opensprinkler:station:http:10:stationState" }
 Number:Time Station10RemainingTime "Stazione10 tempo rimasto" <time> { channel="opensprinkler:station:http:10:remainingWaterTime" }
-Number:Time Station10NextDuration "Stazione10 set tempo" <time> { channel="opensprinkler:station:http:10:nextDuration" }
+Number:Time Station10NextDuration "Stazione10 set tempo" <time> { channel="opensprinkler:station:http:10:nextDuration" } */

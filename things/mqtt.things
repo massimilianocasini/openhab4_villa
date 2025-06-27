@@ -1,0 +1,11 @@
+Bridge mqtt:broker:mosquitto [ host="localhost", secure=false, port=1883, clientID="openhab", retain=false, qos=1, username = "openhabian", password = "openhabian" ] {
+    Thing topic prismsolar "Prismsolar" @ "Garage" {
+      Channels:
+        Type number : power_grid "Potenza prelevata dalla rete W" [ stateTopic = "home/prism/energy_data/power_grid"]
+        Type string : stato "Stato della colonnina" [ stateTopic = "home/prism/1/state", transformationPattern = "MAP:prism_stato.map"]
+        Type number : amp "Corrente attualmente erogata mA" [ stateTopic = "home/prism/1/amp"]
+        Type number : energia_sessione "Energia erogata sessione in corso Wh" [ stateTopic = "home/prism/1/wh"]
+        Type number : energia_total "Energia totale erogata Wh" [ stateTopic = "home/prism/1/wh_total"]
+        Type number : volt "Voltaggio di rete V" [ stateTopic = "home/prism/1/volt"]
+    }
+}

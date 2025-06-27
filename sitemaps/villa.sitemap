@@ -222,7 +222,7 @@ sitemap villa label="Benvenuto a CASA"
             Text item=plcpompadicalore  valuecolor=[ON="green",OFF="red"]
             Text item=eap110outdoorwifi  valuecolor=[ON="green",OFF="red"]
         }
-Text item=Speedtest_Server icon="speedtest"
+        Text item=Speedtest_Server icon="speedtest"
 			{
 				Frame label="Risultati"
 				{
@@ -245,5 +245,13 @@ Text item=Speedtest_Server icon="speedtest"
                     Webview url="/static/chart.html" height=12 icon="speedtest_summary"
 				}
 			}
-    }	
+    }
+    Frame label="Stato Prismsolar" {
+		Default item=Prism_Potenza
+        Default item=Prism_Stato valuecolor=[1="green",0="red"] labelcolor=[1="green", 0="red"]
+        Default item=Prism_Amp
+        Default item=Prism_Energia_Sessione 
+        Default item=Prism_Energia_Totale
+        Default item=Prism_Volt
+	}	
 }
