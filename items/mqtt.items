@@ -1,7 +1,9 @@
 // prismsolar
-Number:Power Prism_Potenza "Potenza prelevata dalla rete [%.1f kW]" (gInfluxdb) ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:power_grid"}
-String Prism_Stato "Stato della colonnina [%s]" ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:stato"}
-Number:ElectricCurrent Prism_Amp "Corrente attualmente erogata [%.1f mA]" (gInfluxdb) ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:amp"}
-Number:Energy Prism_Energia_Sessione "Energia erogata sessione in corso [%.0f Wh]" (gInfluxdb) ["Measurement"] {unit="Wh",channel="mqtt:topic:mosquitto:prismsolar:energia_sessione"}
-Number:Energy Prism_Energia_Totale "Energia totale erogata [%.0f Wh]" (gInfluxdb) ["Measurement"] {unit="Wh",channel="mqtt:topic:mosquitto:prismsolar:energia_total"}
-Number:ElectricPotential Prism_Volt "Voltaggio di rete [%.1f V]" (gInfluxdb) ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:volt"}
+Number:Power PrismPotenza "Potenza prelevata dalla rete [%.1f kW]" <energy> (gInfluxdb) ["Measurement"] {unit="W", channel="mqtt:topic:mosquitto:prismsolar:power_grid"}
+String PrismStato "Stato della colonnina [%s]" <qualityofservices> ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:stato"}
+String PrismMode "Modalità attuale della colonnina [%s]" <qualityofservices> ["Measurement"] {channel="mqtt:topic:mosquitto:prismsolar:mode"}
+Number:ElectricCurrent PrismAmp "Corrente attualmente erogata dalla colonnina [%.0f A]" <faucet> (gInfluxdb) ["Measurement"] {unit="mA", channel="mqtt:topic:mosquitto:prismsolar:amp" }
+Number:Energy PrismEnergiaSessione "Energia erogata sessione in corso / ultima [%.0f kWh]" <batterylevel> (gInfluxdb) ["Measurement"] {unit="Wh",channel="mqtt:topic:mosquitto:prismsolar:energia_sessione" }
+Number:Energy PrismEnergiaTotale "Energia totale erogata [%.0f kWh]" <batterylevel> (gInfluxdb) ["Measurement"] {unit="Wh",channel="mqtt:topic:mosquitto:prismsolar:energia_total" }
+Number:ElectricPotential PrismVolt "Voltaggio di rete [%.0f V]" <flow> (gInfluxdb) ["Measurement"] {unit="V",channel="mqtt:topic:mosquitto:prismsolar:volt"}
+Number:Time PrismSessionTime "Tempo di ricarica in corso / ultima [%.0f h]" <time> (gInfluxdb) ["Measurement"] {unit="s", channel="mqtt:topic:mosquitto:prismsolar:session_time"}

@@ -246,12 +246,16 @@ sitemap villa label="Benvenuto a CASA"
 				}
 			}
     }
-    Frame label="Stato Prismsolar" {
-		Default item=Prism_Potenza
-        Default item=Prism_Stato valuecolor=[1="green",0="red"] labelcolor=[1="green", 0="red"]
-        Default item=Prism_Amp
-        Default item=Prism_Energia_Sessione 
-        Default item=Prism_Energia_Totale
-        Default item=Prism_Volt
+    Frame label="Rete elettrica" {
+		Default item=PrismPotenza
+        Default item=PrismVolt valuecolor=[<220="red",>220="green"] labelcolor=[<220="red",>220="green"]
+        Text label="PrismSolar" icon=energy {
+            Default item=PrismStato valuecolor=[idle="green", waiting="yellow",charging="blue",pause="red"] labelcolor=[idle="green", waiting="yellow",charging="blue",pause="red"]
+            Default item=PrismMode
+            Default item=PrismAmp visibility=[PrismStato != "idle"	]
+            Default item=PrismEnergiaSessione 
+            Default item=PrismEnergiaTotale
+            Default item=SessionTime valuecolor=[0="red",>0="green"] labelcolor=[0="red",>0="green"]
+        }
 	}	
 }

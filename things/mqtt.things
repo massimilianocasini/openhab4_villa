@@ -1,11 +1,18 @@
 Bridge mqtt:broker:mosquitto [ host="localhost", secure=false, port=1883, clientID="openhab", retain=false, qos=1, username = "openhabian", password = "openhabian" ] {
     Thing topic prismsolar "Prismsolar" @ "Garage" {
       Channels:
+        Type string : mode "Modalità attuale della porta" [ stateTopic = "home/prism/1/mode", transformationPattern = "MAP:prism_mode.map"]
+        Type string : stato "Stato attuale della Prism" [ stateTopic = "home/prism/1/state", transformationPattern = "MAP:prism_state.map"]
+        Type number : volt "Tensione attualmente misurata da Prism V" [ stateTopic = "home/prism/1/volt"]
+        Type number : watt "Potenza attualmente erogata dalla porta di ricarica W" [ stateTopic = "home/prism/1/w"]
+        Type number : amp "Corrente attualmente erogata dalla porta di ricarica mA" [ stateTopic = "home/prism/1/amp"]
+        Type number : pilot "Corrente pilotata all’auto A" [ stateTopic = "home/prism/1/pilot"]
+        Type number : user_amp "Corrente impostata dall’utente A" [ stateTopic = "home/prism/1/user_amp"]
+        Type number : session_time "Durata della sessione di ricarica attuale s" [ stateTopic = "home/prism/1/session_time"]
+        Type number : energia_sessione "Energia erogata dalla porta di ricarica durante la sessione in corso Wh" [ stateTopic = "home/prism/1/wh"]
+        Type number : energia_total "Energia totale erogata da Prism Wh" [ stateTopic = "home/prism/1/wh_total"]
+        Type number : error "Codice di errore relativo alla porta" [ stateTopic = "home/prism/1/error"]
         Type number : power_grid "Potenza prelevata dalla rete W" [ stateTopic = "home/prism/energy_data/power_grid"]
-        Type string : stato "Stato della colonnina" [ stateTopic = "home/prism/1/state", transformationPattern = "MAP:prism_stato.map"]
-        Type number : amp "Corrente attualmente erogata mA" [ stateTopic = "home/prism/1/amp"]
-        Type number : energia_sessione "Energia erogata sessione in corso Wh" [ stateTopic = "home/prism/1/wh"]
-        Type number : energia_total "Energia totale erogata Wh" [ stateTopic = "home/prism/1/wh_total"]
-        Type number : volt "Voltaggio di rete V" [ stateTopic = "home/prism/1/volt"]
+
     }
 }
