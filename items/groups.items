@@ -1,6 +1,7 @@
 Group gAstroRadation "Astro"
 Group gTemperature "Temperature Graph"
 Group gNetwork "Network Appliance" ["NetworkAppliance"]
+Group gInfluxdb "InfluxDB" 
 
 Group:Number:AVG gAvgTemperatura "Temperatura media [%.1f °C]" 
 Group:Number:AVG gAvgTempPI "Temp.media PI"

@@ -248,7 +248,7 @@ sitemap villa label="Benvenuto a CASA"
     }
     Frame label="Rete elettrica" {
 		Default item=PrismPotenza
-        Default item=PrismVolt valuecolor=[<220="red",>220="green"] labelcolor=[<220="red",>220="green"]
+        Default item=PrismVolt valuecolor=[<207="red",>220="green", >253="red"] labelcolor=[<207="red",>220="green", > 253="red"]
         Text label="PrismSolar" icon=energy {
             Default item=PrismStato valuecolor=[idle="green", waiting="yellow",charging="blue",pause="red"] labelcolor=[idle="green", waiting="yellow",charging="blue",pause="red"]
             Default item=PrismMode

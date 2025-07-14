@@ -1,0 +1,66 @@
+Bridge modbus:serial:sdm630_basis [port="/dev/ttyUSB0", id=1, baud=9600, stopBits="1.0", parity="none", dataBits=8, encoding="rtu"]
+{
+    Bridge poller BasisWerte [start=0, length=50, type="input", refresh=5000] {
+        Thing data sdm_L1_volt        [readStart="0", readValueType="float32" ]
+        Thing data sdm_L2_volt        [readStart="2", readValueType="float32" ]
+        Thing data sdm_L3_volt        [readStart="4", readValueType="float32" ]
+        Thing data sdm_L1_amp         [readStart="6", readValueType="float32" ]
+        Thing data sdm_L2_amp         [readStart="8", readValueType="float32" ]
+        Thing data sdm_L3_amp         [readStart="10", readValueType="float32" ]
+        Thing data sdm_L1_power       [readStart="12", readValueType="float32" ]
+        Thing data sdm_L2_power       [readStart="14", readValueType="float32" ]
+        Thing data sdm_L3_power       [readStart="16", readValueType="float32" ]
+        Thing data sdm_L1_va          [readStart="18", readValueType="float32" ]
+        Thing data sdm_L2_va          [readStart="20", readValueType="float32" ]
+        Thing data sdm_L3_va          [readStart="22", readValueType="float32" ]
+        Thing data sdm_L1_var         [readStart="24", readValueType="float32" ]
+        Thing data sdm_L2_var         [readStart="26", readValueType="float32" ]
+        Thing data sdm_L3_var         [readStart="28", readValueType="float32" ]
+        Thing data sdm_L1_powerfactor [readStart="30", readValueType="float32" ]
+        Thing data sdm_L2_powerfactor [readStart="32", readValueType="float32" ]
+        Thing data sdm_L3_powerfactor [readStart="34", readValueType="float32" ]
+        Thing data sdm_L1_phase_angle [readStart="36", readValueType="float32" ]
+        Thing data sdm_L2_phase_angle [readStart="38", readValueType="float32" ]
+        Thing data sdm_L3_phase_angle [readStart="40", readValueType="float32" ]
+        Thing data sdm_average_line_to_neutral_voltage [readStart="42", readValueType="float32" ]
+        Thing data sdm_average_line_current [readStart="46", readValueType="float32" ]
+        Thing data sdm_average_sum_of_line_current [readStart="48", readValueType="float32" ]            
+    }    
+}
+
+Bridge modbus:serial:sdm630_SystemPower [port="/dev/ttyUSB0", id=1, baud=9600, stopBits="1.0", parity="none", dataBits=8, encoding="rtu"]
+{
+    Bridge poller SystemPower [start=52, length=34, type="input", refresh=5000] {
+        Thing data sdm_totalsystemPower       [readStart="52", readValueType="float32" ]
+        Thing data sdm_totalsystem_v_a   [readStart="56", readValueType="float32" ] 
+        Thing data sdm_totalsystem_var   [readStart="60", readValueType="float32" ] 
+        Thing data sdm_totalsystem_pf    [readStart="62", readValueType="float32" ]
+        Thing data sdm_totalsystem_fa    [readStart="66", readValueType="float32" ]
+        Thing data sdm_frequency_supply  [readStart="70", readValueType="float32" ]
+        Thing data sdm_toatal_import_kWh [readStart="72", readValueType="float32" ]    
+        Thing data sdm_toatal_export_kWh [readStart="74", readValueType="float32" ]
+        Thing data sdm_toatal_import_kvarh [readStart="76", readValueType="float32" ]
+        Thing data sdm_toatal_export_kvarh [readStart="78", readValueType="float32" ]
+        Thing data sdm_toatal_Vah          [readStart="80", readValueType="float32" ]
+        Thing data sdm_Ah                  [readStart="82", readValueType="float32" ]
+      //  Thing data sdm_total_system_power_demand [readStart="84", readValueType="float32" ]
+
+    }    
+}
+
+Bridge modbus:serial:sdm630_kWh [port="/dev/ttyUSB0", id=1, baud=9600, stopBits="1.0", parity="none", dataBits=8, encoding="rtu"]
+{
+    Bridge poller kWh [start=342, length=22, type="input", refresh=5000] {
+        Thing data sdm_kwh_Totalkwh       [readStart="342", readValueType="float32" ]      
+        Thing data sdm_kwh_Totalkvarh     [readStart="344", readValueType="float32" ]      
+        Thing data sdm_kwh_L1_import_kWh  [readStart="346", readValueType="float32" ]      
+        Thing data sdm_kwh_L2_import_kWh  [readStart="348", readValueType="float32" ]      
+        Thing data sdm_kwh_L3_import_kWh  [readStart="350", readValueType="float32" ]
+        // Thing data sdm_kwh_L1_export_kWh  [readStart="352", readValueType="float32" ]      
+        // Thing data sdm_kwh_L2_export_kWh  [readStart="354", readValueType="float32" ]      
+        // Thing data sdm_kwh_L3_export_kWh  [readStart="356", readValueType="float32" ]
+        // Thing data sdm_kwh_L1_total_kWh   [readStart="358", readValueType="float32" ]      
+        // Thing data sdm_kwh_L2_total_kWh   [readStart="360", readValueType="float32" ]      
+        // Thing data sdm_kwh_L3_total_kWh   [readStart="362", readValueType="float32" ]
+    }    
+}
