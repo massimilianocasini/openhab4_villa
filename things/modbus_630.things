@@ -32,8 +32,8 @@ Bridge modbus:serial:sdm630_SystemPower [port="/dev/ttyUSB0", id=1, baud=9600, s
 {
     Bridge poller SystemPower [start=52, length=34, type="input", refresh=5000] {
         Thing data sdm_totalsystemPower       [readStart="52", readValueType="float32" ]
-        Thing data sdm_totalsystem_v_a   [readStart="56", readValueType="float32" ] 
-        Thing data sdm_totalsystem_var   [readStart="60", readValueType="float32" ] 
+        Thing data sdm_totalsystem_VA   [readStart="56", readValueType="float32" ] 
+        Thing data sdm_totalsystem_VAr   [readStart="60", readValueType="float32" ] 
         Thing data sdm_totalsystem_pf    [readStart="62", readValueType="float32" ]
         Thing data sdm_totalsystem_fa    [readStart="66", readValueType="float32" ]
         Thing data sdm_frequency_supply  [readStart="70", readValueType="float32" ]
@@ -42,10 +42,23 @@ Bridge modbus:serial:sdm630_SystemPower [port="/dev/ttyUSB0", id=1, baud=9600, s
         Thing data sdm_toatal_import_kvarh [readStart="76", readValueType="float32" ]
         Thing data sdm_toatal_export_kvarh [readStart="78", readValueType="float32" ]
         Thing data sdm_toatal_Vah          [readStart="80", readValueType="float32" ]
-        Thing data sdm_Ah                  [readStart="82", readValueType="float32" ]
+        Thing data sdm_Ah                  [readStart="82", readValueType="float32" ]  //52
       //  Thing data sdm_total_system_power_demand [readStart="84", readValueType="float32" ]
 
     }    
+}
+Bridge modbus:serial:sdm630_3 [port="/dev/ttyUSB0", id=1, baud=9600, stopBits="1.0", parity="none", dataBits=8, encoding="rtu"]
+{
+    Bridge poller sdm_3 [start=234, length=18, type="input", refresh=5000] {
+        Thing data sdm_phase1_LN_V_THD [readStart="234", readValueType="float32" ] //EA
+        Thing data sdm_phase2_LN_V_THD [readStart="236", readValueType="float32" ]
+        Thing data sdm_phase3_LN_V_THD [readStart="238", readValueType="float32" ]
+        Thing data sdm_phase1_LN_I_THD [readStart="240", readValueType="float32" ]
+        Thing data sdm_phase2_LN_I_THD [readStart="242", readValueType="float32" ]
+        Thing data sdm_phase3_LN_I_THD [readStart="244", readValueType="float32" ]
+        Thing data sdm_average_V_THD [readStart="248", readValueType="float32" ] //F8
+        Thing data sdm_average_I_THD [readStart="250", readValueType="float32" ] //FA
+    }
 }
 
 Bridge modbus:serial:sdm630_kWh [port="/dev/ttyUSB0", id=1, baud=9600, stopBits="1.0", parity="none", dataBits=8, encoding="rtu"]

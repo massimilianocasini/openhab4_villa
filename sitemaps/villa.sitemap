@@ -240,9 +240,8 @@ sitemap villa label="Benvenuto a CASA"
 				}
 				Frame label="Statistiche"
 				{
-					Text item=Speedtest_ResultURL
-					Image label="Letzte Messung" item=Speedtest_ResultURL
-                    Webview url="/static/chart.html" height=12 icon="speedtest_summary"
+					Default item=Speedtest_Timestamp
+					Image label="Ultima misurazione" item=Speedtest_ResultImage
 				}
 			}
     }
